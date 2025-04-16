@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的网站</title>
+</head>
+<body>
+    <h1>Welcome to the Blank Page</h1>
+    <form id="loginForm">
+        <div>
+            <label for="username">用户名:</label>
+            <input type="text" id="username" name="username" required>
+            <span id="usernameError" style="color: red; display: none;">请输入用户名</span>
+        </div>
+        <div>
+            <label for="password">密码:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">登录</button>
+        <button type="button" id="showRegister">注册</button>
+    </form>
+    
+    <form id="registerForm" style="display: none;">
+        <div>
+            <label for="newUsername">新用户名:</label>
+            <input type="text" id="newUsername" name="newUsername" required>
+            <span id="newUsernameError" style="color: red; display: none;">请输入用户名</span>
+        </div>
+        <div>
+            <label for="newPassword">新密码:</label>
+            <input type="password" id="newPassword" name="newPassword" required>
+        </div>
+        <button type="submit">提交注册</button>
+        <button type="button" id="showLogin">返回登录</button>
+    </form>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            const username = document.getElementById('username').value;
+            const usernameError = document.getElementById('usernameError');
+            
+            if (!username) {
+                usernameError.style.display = 'inline';
+                event.preventDefault();
+            } else {
+                usernameError.style.display = 'none';
+            }
+        });
+        
+        document.getElementById('showRegister').addEventListener('click', function() {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('registerForm').style.display = 'block';
+        });
+        
+        document.getElementById('showLogin').addEventListener('click', function() {
+            document.getElementById('registerForm').style.display = 'none';
+            document.getElementById('loginForm').style.display = 'block';
+        });
+        
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            const newUsername = document.getElementById('newUsername').value;
+            const newUsernameError = document.getElementById('newUsernameError');
+            
+            if (!newUsername) {
+                newUsernameError.style.display = 'inline';
+                event.preventDefault();
+            } else {
+                newUsernameError.style.display = 'none';
+                // 这里可以添加数据库存储逻辑
+                alert('注册成功！');
+                document.getElementById('registerForm').style.display = 'none';
+                document.getElementById('loginForm').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
