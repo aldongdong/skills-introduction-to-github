@@ -1,0 +1,15 @@
+// 由于您使用的是 SQLite 数据库文件（.db 扩展名常见于 SQLite），在命令行中可以使用 SQLite3 工具查看。
+// 1. 确保您已经安装了 SQLite3。如果未安装，请根据您的操作系统进行安装。
+// 2. 打开命令行工具，导航到数据库文件所在的目录：
+//    cd "c:\Users\陈建冬\Desktop\skills-introduction-to-github"
+// 3. 打开数据库文件：
+//    sqlite3 database.db
+// 4. 查看数据库中的所有表：
+//    .tables
+// 5. 查看某个表的结构：
+//    PRAGMA table_info(表名);
+// 6. 查询表中的数据：
+//    SELECT * FROM 表名;
+// 7. 退出 SQLite3 命令行：
+//    .quit
+// 如果您使用的不是 SQLite 数据库，请提供更多信息，例如数据库类型（如 MySQL、PostgreSQL 等），以便给出更准确的查看方法。
